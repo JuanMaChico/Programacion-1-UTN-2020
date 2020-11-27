@@ -1,0 +1,70 @@
+/*
+ ===========================================+
+ Name        : 2do-Parcial-Laboratorio-2.c  |
+ Author      : Juan Manuel Chico            |
+ Version     : 1.0.0						|
+ Description : 2do Parcial Laboratorio 1	|
+ ===========================================+
+ */
+#include <stdio.h>
+#include <stdlib.h>
+#include "LinkedList.h"
+#include "Articulos.h"
+#include "utn.h"
+#include "Controller.h"
+
+
+int main()
+{
+	setbuf(stdout,NULL);
+	int vMenu=1;
+	int contadorID=0;
+	char nameArchivo[51];
+
+	LinkedList* listArticulos = ll_newLinkedList();
+
+
+	do {
+		system("cls");
+		switch (utn_GetNumber("------------------------------Parcial 2 Parte 1------------------------------ \n\n"
+							  "-1- Cargar archivo .csv (modo texto) \n"
+							  "-2- Ordenar A-Z. \n"
+							  "-3- Listar Articulos. \n"
+							  "-4- Aplicar Descuento \n"
+							  "-5- Guardar. \n"
+							  "-6- Salir \n"
+							  "--------------------------------------------------------------------------------\n\n"
+							  "Opcion: "
+							 ,"Erro,Opcion no valida.\n",1,5))
+		{
+			case 1:
+                system("cls");
+                printf("Ingrese Nombre del archivo(Extencion .csv): ");
+                fflush(stdin);
+                scanf("%[^\n]",nameArchivo);
+
+                controller_loadFromText(nameArchivo,listArticulos,&contadorID);
+
+				break;
+			case 2:
+				controller_sortArticulo(listArticulos);
+				break;
+			case 3:
+                system("cls");
+                controller_ListArticulo(listArticulos);
+                system("pause");
+				break;
+			case 4:
+				controller_MapearArticulo(listArticulos);
+				break;
+			case 5:
+				controller_saveAsText("mapeado.csv", listArticulos);
+				break;
+			case 6:
+				vMenu=0;
+				break;
+		}
+	} while (vMenu);
+    return 0;
+}
+

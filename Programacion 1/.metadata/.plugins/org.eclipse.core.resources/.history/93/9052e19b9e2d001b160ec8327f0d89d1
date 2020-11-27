@@ -1,0 +1,4 @@
+
+int controller_loadFromText(char* path , LinkedList* pArrayListArticulo,int* lastID);
+
+

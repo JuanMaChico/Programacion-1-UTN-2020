@@ -1,0 +1,14 @@
+/*
+ ===========================================+
+ Name        : 2do-Parcial-Laboratorio-2.c  |
+ Author      : Juan Manuel Chico            |
+ Version     : parser.h						|
+ Description : 2do Parcial Laboratorio 1	|
+ ===========================================+
+ */
+#ifndef PARSER_H_
+#define PARSER_H_
+
+int parser_ArticuloFromText(FILE* pFile , LinkedList* pArrayListArticulo,int* lastID);
+
+#endif /* PARSER_H_ */

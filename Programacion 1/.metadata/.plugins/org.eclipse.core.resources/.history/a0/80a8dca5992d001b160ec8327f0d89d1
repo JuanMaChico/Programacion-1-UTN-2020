@@ -1,0 +1,55 @@
+/*
+ ===========================================+
+ Name        : 2do-Parcial-Laboratorio-2.c  |
+ Author      : Juan Manuel Chico            |
+ Version     : parser.c						|
+ Description : 2do Parcial Laboratorio 1	|
+ ===========================================+
+ */
+#include <stdio.h>
+#include <stdlib.h>
+
+int parser_ArticuloFromText(FILE* pFile , LinkedList* pArrayListArticulo,int* lastID){
+
+    int retorno= 0;
+    eArticulo *pElement;
+
+    char id[100];
+    char nombre[100];
+    char horasTrabajadas[100];
+    char sueldo[100];
+
+	int id;
+	char articulo[51];
+	float precio;
+	char medida;
+	int rubroId;
+
+    int auxLastId=-1;
+
+    if(pFile!=NULL && pArrayListEmployee!=NULL)
+    {
+        fscanf(pFile,"%[^,],%[^,],%[^,],%[^\n]\n",id,id,id,id);
+
+        while(!feof(pFile))
+        {
+            fscanf(pFile,"%[^,],%[^,],%[^,],%[^\n]\n",id,nombre,horasTrabajadas,sueldo);
+
+            pElement = employee_newParametros(id,nombre,horasTrabajadas,sueldo);
+
+            if(pElement != NULL)
+            {
+                if(ll_add(pArrayListEmployee,pElement)==0){
+                	if(atoi(id)>auxLastId){
+                		auxLastId=atoi(id);
+                	}
+                    retorno++;
+                }
+            }
+        }
+    }
+    if(retorno>0){
+    	*lastID= auxLastId;
+    }
+    return retorno;
+}

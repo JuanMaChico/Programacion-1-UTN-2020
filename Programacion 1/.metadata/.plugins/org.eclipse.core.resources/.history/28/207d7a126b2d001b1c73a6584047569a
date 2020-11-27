@@ -1,0 +1,118 @@
+/*
+ * utn.c
+ * 	Biblioteca de Funciones UTN.
+ *      Author: Juan Manuel Chico
+ */
+#ifndef UTN_H_
+#define UTN_H_
+
+
+/*
+ * \brief Pide al usuario que ingrese un numero entero, validando que se encuentre entre un minimo y un maximo
+ *  \param	texto de interaccion con el usuario
+ *  \param	texto de error
+ *  \param minimo
+ *  \param maximo
+ *  \return	retorna el dato ingresado.
+ */
+int utn_GetNumber (char texto[],char textoError[], int min, int max);
+
+/*
+ * \brief valida un que un numero entero se encuentre dentro de un rango indicado
+ *  \param	dato a validar
+ *  \param	minimo del rango en el que se va a validar el dato
+ *  \param maximo del tango en el que se va a validar el dato
+ *  \return	retorna 1 si el dato es valido o 0 si el dato no es valido
+ */
+int ValidaMinMax(int dato, int min, int max);
+
+/*
+ * \brief Pide al usuario que ingrese un numero flotante, validando que se encuentre entre un minimo y un maximo
+ *  \param	texto de interaccion con el usuario
+ *  \param	texto de error
+ *  \param minimo
+ *  \param maximo
+ *  \return	retorna el dato ingresado.
+ */
+float utn_GetNumberFloat(char texto[],char textoError[], float min, float max);
+/*
+ * \brief valida un que un numero entero se encuentre dentro de un rango indicado
+ *  \param	dato a validar
+ *  \param	minimo del rango en el que se va a validar el dato
+ *  \param maximo del tango en el que se va a validar el dato
+ *  \return	retorna 1 si el dato es valido o 0 si el dato no es valido
+ */
+int ValidaMinMaxFloat(float dato, float min, float max);
+
+/*
+ * \brief pide al usuario que ingrese un dato de tipo string (un array de char), Ej un nombre.
+ *  \param	direccion donde se desea guardar el dato ingresado por el usuario.
+ *  \param	texto de interaccion con el usuario
+ *  \param tamanio disponible para guardar el dato ingresado.
+ *  \return
+ */
+void utn_GetName(char name[],char text[],int tam);
+
+/*
+ * \brief valida que un dato de tipo array de char contenga solamente letras.
+ *  \param	cadena que se desea validar
+ *  \param	maximo de caracteres que posee la cadena
+ *  \return	retorna 1 si los caracteres son validos o 0 si los caracteres no son validos
+ */
+int isName (char*cadena, int limite);
+
+/*
+ * \brief  recibe una cadena de chars y coloca solamente la primera letra en mayuscula y el resto en minuscula
+ *  \param	dato a corregir
+ *  \param	tamanio del dato
+ *  \return	no retorna
+ */
+void formatName(char name[],int tam);
+
+/*
+ * \brief  pide al ususario un numero de CUIT.
+ *  \param	texto de interaccion con el usuario
+ *  \param	direccion donde se va a guardar el dato
+ *  \return	no retorna nada
+ */
+void utn_GetCuit(char textIngreso[],char dato[]);
+/*
+ * \brief valida que el dato ingresado en la funcion utn_GetCuit sea efectivamente un cuit
+ *  \param	dato a validar
+ *  \param	tamanio del dato
+ *  \return	retorna 1 si el cuit es correcto -1 si alguno de los caracteres no corresponde o -2 si exede la cantidad de caracteres admitidos
+ */
+int isCuit(char cuit[],int tam);
+/*
+ * \brief  pide al ususario un numero de DNI.
+ *  \param	texto de interaccion con el usuario
+ *  \param	direccion donde se va a guardar el dato
+ *  \return	no retorna nada
+ */
+void utn_GetDNI(char textIngreso[],char dato[]);
+/*
+ * \brief valida que el dato ingresado en la funcion utn_GetDNI sea efectivamente un DNI
+ *  \param	dato a validar
+ *  \param	tamanio del dato
+ *  \return	retorna 1 si el dni es correcto -1 si alguno de los caracteres no corresponde o -2 si exede la cantidad de caracteres admitidos
+ */
+int isDNI(char dato[],int tam);
+
+/*
+ * \brief simplemente ejecuta CLS
+ *  \return	no retorna.
+ */
+void utn_limpiarPantalla();
+
+/*
+ * \brief Ejecuta system pause
+ *  \return	no retorna.
+ */
+void utn_pausa();
+
+
+
+
+
+
+#endif /* UTN_H_ */

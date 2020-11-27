@@ -1,0 +1,8 @@
+
+int controller_loadFromText(char* path , LinkedList* pArrayListArticulo,int* lastID);
+int controller_ListArticulo(LinkedList* pArrayListArticulo);
+int controller_sortArticulo(LinkedList* pArrayListEmployee);
+int controller_saveAsText(char* path , LinkedList* pArrayListArticulos);
+int calculaDescuento (void* pElemento);
+
+

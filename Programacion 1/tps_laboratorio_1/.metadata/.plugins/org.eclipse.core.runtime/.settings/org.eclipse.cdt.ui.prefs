@@ -1,0 +1,7 @@
+eclipse.preferences.version=1
+org.eclipse.cdt.ui.text.templates.custom=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates><template autoinsert\="true" context\="org.eclipse.cdt.ui.text.templates.c" deleted\="false" description\="doxigen" enabled\="true" id\="org.eclipse.cdt.ui.text.templates.c.comment" name\="comment">\r\n/**  \r\n * \\brief  \r\n *  \\param \r\n *  \\param\r\n *  \\return \r\n */</template></templates>
+spelling_locale=
+spelling_locale_initialized=true
+spelling_user_dictionary_encoding=
+useAnnotationsPrefPage=true
+useQuickDiffPrefPage=true

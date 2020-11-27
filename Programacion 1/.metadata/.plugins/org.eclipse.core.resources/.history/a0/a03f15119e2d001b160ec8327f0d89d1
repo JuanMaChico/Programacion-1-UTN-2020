@@ -1,0 +1,19 @@
+/*
+ ===========================================+
+ Name        : 2do-Parcial-Laboratorio-2.c  |
+ Author      : Juan Manuel Chico            |
+ Version     : Articulos.h					|
+ Description : 2do Parcial Laboratorio 1	|
+ ===========================================+
+ */
+
+typedef struct{
+	int id;
+	char articulo[51];
+	float precio;
+	char medida;
+	int rubroId;
+}eArticulo;
+
+
+

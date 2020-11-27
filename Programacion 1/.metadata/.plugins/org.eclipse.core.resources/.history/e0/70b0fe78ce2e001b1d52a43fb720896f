@@ -1,0 +1,150 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "LinkedList.h"
+#include "Articulos.h"
+#include "parser.h"
+#include "utn.h"
+
+/** \brief Carga los datos de los empleados desde el archivo data.csv (modo texto).
+ *
+ * \param path char*
+ * \param pArrayListEmployee LinkedList*
+ * \return int
+ *
+ */
+int controller_loadFromText(char* path , LinkedList* pArrayListArticulo,int* lastID){
+
+    FILE* f;
+    int retorno=-1;
+    f = fopen (path, "r");
+
+    if(ll_len(pArrayListArticulo) == 0){
+		if(f == NULL){
+			printf("Error al abrir el archivo de texto, Corrobore si existe. \n\n");
+			system("pause");
+		}else{
+			 retorno=0;
+			 printf("Archivo abierto correctamente.\n\n");
+			 retorno= parser_ArticuloFromText(f , pArrayListArticulo,lastID);
+			 system("pause");
+		}
+    }else{
+    	printf("El archivo ya fue cargado!.\n\n");
+    	system("pause");
+    }
+    return retorno;
+}
+
+int controller_ListArticulo(LinkedList* pArrayListArticulo){
+    int retorno=-1;
+    int i,len;
+    len=ll_len(pArrayListArticulo);
+    if(pArrayListArticulo!=NULL && len>0)
+    {
+    	printf("+-----------------------------------------------------------------------------------------------------+\n");
+    	printf("|%5s  %34s  %16s  %16s  %18s    | \n","ID","ARTICULO","PRECIO","MEDIDA","RUBRO ID");
+    	printf("+-----------------------------------------------------------------------------------------------------+\n");
+        for(i=0;i<len;i++)
+        {
+            Articulo_printArticulo(pArrayListArticulo,i);
+            printf("+-----------------------------------------------------------------------------------------------------+\n");
+            retorno=0;
+        }
+    }else{
+    	printf("No hay datos a mostrar.\n");
+    }
+    return retorno;
+}
+
+int controller_sortArticulo(LinkedList* pArrayListEmployee){
+	int len;
+	len = ll_len(pArrayListEmployee);
+	if (pArrayListEmployee!=NULL && len>0){
+
+		ll_sort(pArrayListEmployee,articulo_OrdenaCadenaNombre,1);
+
+		printf("Ordenando....\n");
+		system("pause");
+	} else {
+		printf(" \n No hay datos a Mostrar \n");
+		system("pause");
+	}
+	return 1;
+}
+
+int controller_saveAsText(char* path , LinkedList* pArrayListArticulos)
+{
+    FILE* f;
+
+    eArticulo* articuloAux;
+
+	int id;
+	char articulo[100];
+	int precio;
+	char medida[100];
+	int rubroId;
+	int len;
+	int retorno=-1;
+
+    f= fopen(path, "w");
+    if(f != NULL && ll_len(pArrayListArticulos)>0)
+    {
+        len=ll_len(pArrayListArticulos);
+        fprintf(f,"id,articulo,precio,medida,rubro\n");
+        for(int i=0; i<len; i++)
+        {
+        	articuloAux=(eArticulo*)ll_get(pArrayListArticulos,i);
+
+            articulo_getId(articuloAux,&id);
+
+            articulo_getArticulo(articuloAux,articulo);
+
+            articulo_getMedida(articuloAux,medida);
+
+            articulo_getPrecio(articuloAux,&precio);
+
+            articulo_getRubroId(articuloAux,&rubroId);
+
+            fprintf(f,"%d,%s,%d,%s,%d\n",id,articulo,precio,medida,rubroId);
+        }
+        printf(" \nArchivo guardado\n\n");
+        retorno=0;
+    }
+    else
+    {
+        printf(" \nNo se pudo guardar el archivo\n");
+        retorno=0;
+    }
+    fclose(f);
+    return retorno;
+}
+
+int controller_MapearArticulo(LinkedList* pArrayListEmployee){
+	int len;
+	len = ll_len(pArrayListEmployee);
+	if (pArrayListEmployee!=NULL && len>0){
+
+		ll_map(pArrayListEmployee, calculaDescuento);
+
+		printf("Calculando....\n");
+		system("pause");
+	} else {
+		printf(" \n No hay datos a Calcular \n");
+		system("pause");
+	}
+	return 1;
+}
+
+void calculaDescuento (void* pElemento){
+	eArticulo* articuloAux = (eArticulo*) pElemento;
+	int rubroId;
+	int precio;
+	articulo_getRubroId(articuloAux,&rubroId);
+	if(rubroId == 1 && ){
+
+	}
+}
+
+
+
+

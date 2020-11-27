@@ -1,0 +1,9 @@
+08:49:36 **** Rebuild of configuration Debug for project Trabajo Practico 2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Trabajo Practico 2.o" "..\\src\\Trabajo Practico 2.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ArrayEmployees.o" "..\\src\\ArrayEmployees.c" 
+gcc -o "Trabajo Practico 2.exe" "src\\ArrayEmployees.o" "src\\Trabajo Practico 2.o" "src\\utn.o" 
+
+08:49:42 Build Finished. 0 errors, 0 warnings. (took 5s.563ms)
+

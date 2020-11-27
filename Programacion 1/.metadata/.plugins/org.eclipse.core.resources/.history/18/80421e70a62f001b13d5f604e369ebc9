@@ -1,0 +1,99 @@
+/*
+ ===========================================+
+ Name        : 2do-Parcial-Laboratorio-2.c  |
+ Author      : Juan Manuel Chico            |
+ Version     : Articulos.h					|
+ Description : 2do Parcial Laboratorio 1	|
+ ===========================================+
+ */
+#include "LinkedList.h"
+
+typedef struct{
+	int id;
+	char articulo[51];
+	float precio;
+	char medida[51];
+	int rubroId;
+}eArticulo;
+
+/*
+ * \brief Consigue una direccion me memoria con el espacio suficiente para alojar un dato de tipo eArticulo
+ *  \return Retorna un Puntero a eArticulo o en caso de no existir espacio disponible retornada NULL
+ */
+eArticulo* articulo_new();
+/*
+ * \brief Inicializa la estructura eArticulo con los datos pasados por parametros.
+ *  \param	char ID
+ *  \param	char Nombre del Articulo
+ *  \param  char precio
+ *  \param  char medida
+ *  \param  char id del rubro
+ *  \return
+ */
+eArticulo* articulo_newParametros(char* idStr,char* articuloStr,char* precioStr, char* medidaStr,char*rubroIdStr);
+
+/*
+ * \brief Valida que el id obtenido cumpla con ser un numero, lo parsea y lo entrega a la funcion encargada de guardalo
+ *  \param puntero al dato eArticulo.
+ *  \param char id
+ *  \return retorna 0 en caso de poder realizar la accion.
+ */
+int articulo_setIdS(eArticulo* this,char* id);
+
+/*
+ * \brief guarda el id en la estructura.
+ *  \param puntero a la estructura.
+ *  \param int id
+ *  \return retorna 0 en caso correcto o -1 en caso de error
+ */
+int articulo_setId(eArticulo* this,int id);
+
+/*
+ * \brief valida que el string recibido corresponda a un numero para ser usado como tal
+ *  \param	char stringDato con numeros
+ *  \return	en caso de error devolvera -1 y en caso correcto un 0
+ */
+int isValidNumber(char* stringRecibido);
+
+/*
+ * \brief Copia el Nombre en la estructura.
+ *  \param	Puntero a la estructura.
+ *  \param	char nombre
+ *  \return	retorna -1 en caso de error, y 0 en caso de cero errores.
+ */
+int articulo_setNombre(eArticulo* this,char* nombre);
+
+/*
+ * \brief Copia el precio en la estructura.
+ *  \param	Puntero a la estructura.
+ *  \param	int precio
+ *  \return	retorna -1 en caso de error, y 0 en caso de cero errores.
+ */
+int articulo_setprecio(eArticulo* this,float precio);
+
+int articulo_setprecioS(eArticulo* this,char* precioS);
+
+int articulo_setMedidaS(eArticulo* this,char* medida);
+
+int articulo_setrubroIdS(eArticulo* this,char* idrubro);
+
+int articulo_setrubroId(eArticulo* this,int idrubro);
+
+int Articulo_printArticulo(LinkedList* pArrayListArticulo, int index);
+
+int articulo_getRubroId(eArticulo* this,int* idrubro);
+
+int articulo_getPrecio(eArticulo* this,float* precio);
+
+int articulo_getMedida(eArticulo* this,char* medida);
+
+int articulo_getArticulo(eArticulo* this,char* nombre);
+
+int articulo_getId(eArticulo* this,int* id);
+
+int articulo_OrdenaCadenaNombre(void* elementoA, void* elementoB);
+
+int articulos_countXrubro (void* articulo);
+
+int articulos_countPrecio(void* articulo);
+

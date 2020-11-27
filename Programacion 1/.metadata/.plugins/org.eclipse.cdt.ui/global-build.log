@@ -1,0 +1,49 @@
+14:44:30 **** Rebuild of configuration Debug for project 1er-Parcial-Laboratorio-1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parcial 1 Laboratorio.o" "..\\src\\Parcial 1 Laboratorio.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Electrodomestico.o" "..\\src\\Electrodomestico.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Reparacion.o" "..\\src\\Reparacion.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Cliente.o" "..\\src\\Cliente.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Servicio.o" "..\\src\\Servicio.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Informes.o" "..\\src\\Informes.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Marca.o" "..\\src\\Marca.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\pais.o" "..\\src\\pais.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o 1er-Parcial-Laboratorio-1.exe "src\\Cliente.o" "src\\Electrodomestico.o" "src\\Informes.o" "src\\Marca.o" "src\\Parcial 1 Laboratorio.o" "src\\Reparacion.o" "src\\Servicio.o" "src\\pais.o" "src\\utn.o" 
+Info: Nothing to build for 1er-Parcial-Laboratorio-1
+14:46:35 **** Incremental Build of configuration Debug for project 1er-Parcial-Laboratorio-1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Electrodomestico.o" "..\\src\\Electrodomestico.c" 
+gcc -o 1er-Parcial-Laboratorio-1.exe "src\\Cliente.o" "src\\Electrodomestico.o" "src\\Informes.o" "src\\Marca.o" "src\\Parcial 1 Laboratorio.o" "src\\Reparacion.o" "src\\Servicio.o" "src\\pais.o" "src\\utn.o" 
+Info: Nothing to build for 1er-Parcial-Laboratorio-1
+14:49:09 **** Incremental Build of configuration Debug for project 1er-Parcial-Laboratorio-1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Electrodomestico.o" "..\\src\\Electrodomestico.c" 
+gcc -o 1er-Parcial-Laboratorio-1.exe "src\\Cliente.o" "src\\Electrodomestico.o" "src\\Informes.o" "src\\Marca.o" "src\\Parcial 1 Laboratorio.o" "src\\Reparacion.o" "src\\Servicio.o" "src\\pais.o" "src\\utn.o" 
+Info: Nothing to build for 1er-Parcial-Laboratorio-1
+16:52:44 **** Incremental Build of configuration Debug for project 2do-Parcial-Laboratorio-2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\LinkedList.o" "..\\src\\LinkedList.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\parser.o" "..\\src\\parser.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\2do-Parcial-Laboratorio-2.o" "..\\src\\2do-Parcial-Laboratorio-2.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Articulos.o" "..\\src\\Articulos.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Controller.o" "..\\src\\Controller.c" 
+gcc -o 2do-Parcial-Laboratorio-2.exe "src\\2do-Parcial-Laboratorio-2.o" "src\\Articulos.o" "src\\Controller.o" "src\\LinkedList.o" "src\\parser.o" "src\\utn.o" 
+17:05:50 **** Incremental Build of configuration Debug for project 2do-Parcial-Laboratorio-2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\2do-Parcial-Laboratorio-2.o" "..\\src\\2do-Parcial-Laboratorio-2.c" 
+gcc -o 2do-Parcial-Laboratorio-2.exe "src\\2do-Parcial-Laboratorio-2.o" "src\\Articulos.o" "src\\Controller.o" "src\\LinkedList.o" "src\\parser.o" "src\\utn.o" 
+17:07:48 **** Incremental Build of configuration Debug for project 2do-Parcial-Laboratorio-2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\2do-Parcial-Laboratorio-2.o" "..\\src\\2do-Parcial-Laboratorio-2.c" 
+gcc -o 2do-Parcial-Laboratorio-2.exe "src\\2do-Parcial-Laboratorio-2.o" "src\\Articulos.o" "src\\Controller.o" "src\\LinkedList.o" "src\\parser.o" "src\\utn.o" 
+17:10:46 **** Incremental Build of configuration Debug for project 2do-Parcial-Laboratorio-2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\2do-Parcial-Laboratorio-2.o" "..\\src\\2do-Parcial-Laboratorio-2.c" 
+gcc -o 2do-Parcial-Laboratorio-2.exe "src\\2do-Parcial-Laboratorio-2.o" "src\\Articulos.o" "src\\Controller.o" "src\\LinkedList.o" "src\\parser.o" "src\\utn.o" 
+17:11:41 **** Incremental Build of configuration Debug for project 2do-Parcial-Laboratorio-2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\2do-Parcial-Laboratorio-2.o" "..\\src\\2do-Parcial-Laboratorio-2.c" 
+gcc -o 2do-Parcial-Laboratorio-2.exe "src\\2do-Parcial-Laboratorio-2.o" "src\\Articulos.o" "src\\Controller.o" "src\\LinkedList.o" "src\\parser.o" "src\\utn.o" 
+Info: Nothing to build for 2do-Parcial-Laboratorio-2
+Info: Nothing to build for 2do-Parcial-Laboratorio-2

@@ -1,0 +1,7 @@
+typedef struct{
+	int id;
+	char articulo[51];
+	float precio;
+	float medida;
+	int rubroId;
+}eArticulo;

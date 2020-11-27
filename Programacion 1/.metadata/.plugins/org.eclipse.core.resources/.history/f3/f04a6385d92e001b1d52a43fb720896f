@@ -1,0 +1,95 @@
+/*
+ ===========================================+
+ Name        : 2do-Parcial-Laboratorio-2.c  |
+ Author      : Juan Manuel Chico            |
+ Version     : 1.0.0						|
+ Description : 2do Parcial Laboratorio 1	|
+ ===========================================+
+ */
+#include <stdio.h>
+#include <stdlib.h>
+#include "LinkedList.h"
+#include "Articulos.h"
+#include "utn.h"
+#include "Controller.h"
+
+
+int main()
+{
+	setbuf(stdout,NULL);
+	int vMenu=1;
+	int vSubMenu=1;
+	int contadorID=0;
+	char nameArchivo[51];
+	int flagDescuento=0;
+
+	LinkedList* listArticulos = ll_newLinkedList();
+
+
+	do {
+		system("cls");
+		switch (utn_GetNumber("------------------------------Parcial 2 Parte 1------------------------------ \n\n"
+							  "-1- Cargar archivo .csv (modo texto) \n"
+							  "-2- Ordenar A-Z. \n"
+							  "-3- Listar Articulos. \n"
+							  "-4- Aplicar Descuento \n"
+							  "-5- Guardar. \n"
+							  "-6- Informes"
+							  "-7- Salir \n"
+							  "--------------------------------------------------------------------------------\n\n"
+							  "Opcion: "
+							 ,"Erro,Opcion no valida.\n",1,7))
+		{
+			case 1:
+                system("cls");
+                printf("Ingrese Nombre del archivo(Extencion .csv): ");
+                fflush(stdin);
+                scanf("%[^\n]",nameArchivo);
+                controller_loadFromText(nameArchivo,listArticulos,&contadorID);
+				break;
+			case 2:
+				controller_sortArticulo(listArticulos);
+				break;
+			case 3:
+                system("cls");
+                controller_ListArticulo(listArticulos);
+                system("pause");
+				break;
+			case 4:
+				if(flagDescuento == 0){
+					controller_MapearArticulo(listArticulos);
+					flagDescuento=1;
+				}else{
+					printf("Descuento Ya Realizado...\n");
+				}
+				break;
+			case 5:
+				if(flagDescuento==1){
+					controller_saveAsText("mapeado.csv", listArticulos);
+				}else{
+					printf("No hay descuento para guardar...\n");
+				}
+				break;
+			case 6:
+				do {
+					switch (utn_GetNumber("------------------------------    Informes    ------------------------------ \n\n"
+										  "-1- Cantidad de Articulos cuyo precio sea mayor a $100. \n"
+										  "-2- Cantidad de Articulos del Rubro 1-CUIDADO DE ROPA \n"
+										  "-3- Salir \n"
+										  "------------------------------------------------------------------------------\n\n"
+										  "Opcion: "
+										 ,"Erro,Opcion no valida.\n",1,3))
+					{
+						case 1:
+							break;
+					}
+				} while (vSubMenu);
+				break;
+			case 7:
+				vMenu=0;
+				break;
+		}
+	} while (vMenu);
+    return 0;
+}
+
